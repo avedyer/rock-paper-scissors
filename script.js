@@ -6,6 +6,9 @@ let outcome;
 
 let playerOptions = document.querySelectorAll('.playerChoice');
 
+document.querySelector("#playerScore").innerHTML = score[0];
+document.querySelector("#computerScore").innerHTML = score[1];
+
 function computerPlay(){
     let numChoice = Math.floor(Math.random() * 3);
     return options[numChoice];
@@ -14,7 +17,6 @@ function computerPlay(){
 function playRound(){
     let choices = [playerChoice, computerPlay()];
 
-    console.log(choices);
 
     if (choices[0] === choices[1]){
         return "It's a tie!";
@@ -46,11 +48,16 @@ function playRound(){
     return "Player wins!"
 }
 
+function updatePage(){
+    outcome = playRound();
+    document.querySelector('#outcome').innerHTML = outcome;
+    document.querySelector("#playerScore").innerHTML = score[0];
+    document.querySelector("#computerScore").innerHTML = score[1];
+}
+
 for (playerOption of playerOptions) {
-    console.log(playerOption);
     playerOption.addEventListener('click', function(){
         playerChoice = this.value;
-        console.log(playRound());
-        console.log(score);
+        updatePage();
     });
 }
