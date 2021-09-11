@@ -9,17 +9,23 @@
             <header>
                 <h1>Rock, Paper, Scissors!</h1>
             </header>
-            <main>
-                <h2>Score</h2>
-                <h3>Player: <span id="playerScore"></span></h3>
-                <h3>Computer: <span id="computerScore"></span></h3>
-                <form id="playerForm" onsubmit="return false">
+            <main>       
+                <form class="game" id="playerForm" onsubmit="return false">
                     <input type="image" src="./imgs/rock.png" class="playerChoice" value="rock">
                     <input type="image" src="./imgs/paper.png" class="playerChoice" value="paper">
                     <input type="image" src="./imgs/scissors.png" class="playerChoice" value="scissors">
                 </form>
-                <h3 id="outcome"></h3>
-            </main>
+                <div class="game" id="score">
+                    <h3>Player: <span id="playerScore"></span></h3>
+                    <h3>Computer: <span id="computerScore"></span></h3>
+                </div>
+                <div class="game" id="computerChoices">
+                    <img src="./imgs/rock.png" alt="Rock" id="rock">
+                    <img src="./imgs/paper.png" alt="Paper" id="paper">
+                    <img src="./imgs/scissors.png" alt="Scissors" id="scissors">
+                </div>
+            </main> 
+            <h3 id="outcome"></h3>
             <script src="./script.js"></script>
         </body>
     </head>

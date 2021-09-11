@@ -3,6 +3,7 @@ let computerChoice;
 let score = [0, 0];
 let options = ["rock", "paper", "scissors"];
 let outcome;
+let computerChoiceElement;
 
 let playerOptions = document.querySelectorAll('.playerChoice');
 
@@ -11,7 +12,8 @@ document.querySelector("#computerScore").innerHTML = score[1];
 
 function computerPlay(){
     let numChoice = Math.floor(Math.random() * 3);
-    return options[numChoice];
+    computerChoice = options[numChoice];
+    return computerChoice;
 }
 
 function playRound(){
@@ -49,7 +51,12 @@ function playRound(){
 }
 
 function updatePage(){
+    if (computerChoiceElement) {
+        computerChoiceElement.classList.remove("computerChoice");
+    }
     outcome = playRound();
+    computerChoiceElement = document.querySelector("#" + CSS.escape(computerChoice));
+    computerChoiceElement.className = "computerChoice";
     document.querySelector('#outcome').innerHTML = outcome;
     document.querySelector("#playerScore").innerHTML = score[0];
     document.querySelector("#computerScore").innerHTML = score[1];
