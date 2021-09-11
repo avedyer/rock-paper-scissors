@@ -40,15 +40,15 @@ main {
 
 img, input[type="image"]{
     display: block;
-    height: 160px;
-    width: 160px;
+    height: 148px;
+    width: 148px;
     margin-bottom: 10px;
     border-radius: 100%;
     object-fit: cover;
 }
 
 input[type="image"]:hover, .computerChoice{
-    width: 154px;
-    height: 154px;
-    border: 3px solid rgba(0, 0, 0, .25);
+    width: 144px;
+    height: 144px;
+    border: 2px solid rgba(0, 0, 0, .25);
 }
