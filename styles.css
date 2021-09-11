@@ -6,6 +6,8 @@ body {
     font-family: 'Verdana', sans-serif;
     font-variant: small-caps;
     background-color: aliceblue;
+    margin: 0;
+    overflow: hidden;
 }
 
 
